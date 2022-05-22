@@ -1,0 +1,27 @@
+<button class="btn btn-primary"><a routerLink="../add">Add a Post</a></button>
+<br>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">UserID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of postList">
+
+      <td>{{ p.userId}}</td>
+      <td>{{ p.title}}</td>
+      <td style="width: 75px;">{{ p.body}}</td>
+      <td>
+        <button class="btn btn-primary" style="margin: 5px;" (click)="editPost(p.id)">Edit</button>
+        <button class="btn btn-danger"  style="margin: 5px;" (click)="deletePost(p.id)">Delete</button>
+        <button type="button" class="btn btn-success"  style="margin: 5px;" (click)="viewPost(p.id)">View</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
